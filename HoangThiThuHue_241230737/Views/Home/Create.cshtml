@@ -1,0 +1,40 @@
+﻿@model HoangThiThuHue_241230737.Models.TaiSan
+@{
+    ViewData["Title"] = "Thêm tài sản";
+}
+<div class="form-box">
+    <h3>THÊM TÀI SẢN MỚI</h3>
+    <form asp-action="Create" method="post">
+        <div class="form-row">
+            <label>Loại tài sản</label>
+            <div>
+                <select asp-for="MaLoai" asp-items="ViewBag.DsLoai"></select>
+            </div>
+        </div>
+        <div class="form-row">
+            <label>Tên tài sản</label>
+            <div>
+                <input asp-for="TenTs" />
+                <span asp-validation-for="TenTs" class="field-error"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <label>Nguyên giá</label>
+            <div>
+                <input asp-for="NguyenGia" />
+                <span asp-validation-for="NguyenGia" class="field-error"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <label>Tên file ảnh</label>
+            <div>
+                <input asp-for="Anh" />
+                <span asp-validation-for="Anh" class="field-error"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <label></label>
+            <div><button type="submit" class="btn-create">Create</button></div>
+        </div>
+    </form>
+</div>
